@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>TesOnline</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google-site-verification" content="GyVoZVGyQNW3ag-NEqc4INyH6W5rxA0Ni_g1mMcySJM" />
+    
+
+<script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
+<script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script>
+<script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script>
+<meta charset='UTF-8'>
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+<link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+<link rel="canonical" href="https://codepen.io/vincebrown/pen/bNNpmY?depth=everything&limit=all&order=popularity&page=11&q=portfolio&show_forks=false" />
+<link href='https://fonts.googleapis.com/css?family=Oswald:700,300' rel='stylesheet' type='text/css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<style class="cp-pen-styles">* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("https://subtlepatterns.com/patterns/sativa.png");
+}
+
+.title {
+  text-align: center;
+  font-family: 'Oswald';
+  font-weight: 100;
+  font-size: 3.75rem;
+  letter-spacing: 5px;
+  background: linear-gradient(rgba(255, 0, 0, 0), #444, rgba(255, 0, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 37.5em) {
+  .title {
+    font-size: 4.75rem;
+  }
+}
+
+p {
+  margin: 0 auto 2rem;
+  text-align: center;
+  font-family: 'oswald';
+  font-size: 1.25rem;
+  color: #444;
+  font-weight: 100;
+  width: 90%;
+}
+@media screen and (min-width: 37.5em) {
+  p {
+    height: 70%;
+  }
+}
+
+.case-study-gallery {
+  margin-top: 50px;
+  width: 90%;
+  margin: 50px auto;
+  max-width: 1100px;
+}
+
+.case-study {
+  position: relative;
+  display: block;
+  width: 90%;
+  height: 250px;
+  margin: 0 auto 2rem;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: all .4s ease;
+}
+@media screen and (min-width: 37.5em) {
+  .case-study {
+    height: 300px;
+  }
+}
+@media screen and (min-width: 45em) {
+  .case-study {
+    display: inline-block;
+    width: 45%;
+    margin-left: 25px;
+  }
+}
+
+.case-study__img {
+  width: 90%;
+  display: block;
+  margin-top: 50%;
+  transform: translateY(50%);
+  margin: 0 auto;
+}
+
+.case-study__overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+.case-study__overlay:after {
+  content: '';
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+  background-color: #202020;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  z-index: -10;
+  left: 0;
+  transition: all .3s ease;
+}
+
+.case-study__title {
+  position: relative;
+  top: -200px;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+  font-size: 2.25rem;
+  font-family: 'Oswald';
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  letter-spacing: 5px;
+  transition: all 0.3s cubic-bezier(0.3, 0, 0, 1.3);
+}
+
+.case-study__link {
+  position: relative;
+  display: block;
+  width: 60%;
+  top: 200px;
+  padding: 10px;
+  margin: 0 auto;
+  font-family: 'Oswald';
+  color: white;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 3px;
+  font-size: 1.25em;
+  transition: all 0.3s cubic-bezier(0.3, 0, 0, 1.3);
+}
+.case-study__link:hover {
+  background-color: white;
+  color: #202020;
+}
+
+.case-study:hover .case-study__title {
+  top: 0;
+}
+.case-study:hover .case-study__link {
+  top: 0;
+}
+.case-study:hover .case-study__overlay:after {
+  opacity: .75;
+}
+
+.study1 {
+  background-image: url("images/galery/1.jpg");
+}
+
+.study2 {
+  background-image: url("images/galery/2.jpg");
+}
+
+.study3 {
+  background-image: url("images/galery/3.jpg");
+}
+
+.study4 {
+  background-image: url("images/galery/4.jpg");
+}
+
+.study5 {
+  background-image: url("images/galery/5.jpg");
+}
+
+.study6 {
+  background-image: url("images/galery/6.jpg");
+}
+
+.study7 {
+  background-image: url("images/galery/7.jpg");
+}
+
+.study8 {
+  background-image: url("images/galery/8.jpg");
+}
+
+.study9 {
+  background-image: url("images/galery/9.jpg");
+}
+
+.study10 {
+  background-image: url("images/galery/10.jpg");
+}
+
+.study11 {
+  background-image: url("images/galery/11.jpg");
+}
+
+.study12 {
+  background-image: url("images/galery/12.jpg");
+}
+
+.study13 {
+  background-image: url("images/galery/13.jpg");
+}
+
+.study14 {
+  background-image: url("images/galery/14.jpg");
+}
+
+.study15 {
+  background-image: url("images/galery/15.jpg");
+}
+
+.study16 {
+  background-image: url("images/galery/16.jpg");
+}
+</style>
+
+
+<style type="text/css">
+    /*
+inspired from http://codepen.io/Rowno/pen/Afykb
+& https://jsfiddle.net/q0rgL8ws/
+*/
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+    overflow:hidden;
+}
+.item.active img {
+    transition: transform 5000ms linear 0s;
+    /* This should be based on your carousel setting. For bs, it should be 5second*/
+    transform: scale(1.05, 1.05);
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+/*
+WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+now override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+}
+
+    </style>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.alert = function () { };
+        var defaultCSS = document.getElementById('bootstrap-css');
+        function changeCSS(css) {
+            if (css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="' + css + '" type="text/css" />');
+            else $('head > link').filter(':first').replaceWith(defaultCSS);
+        }
+        $(document).ready(function () {
+            var iframe_height = parseInt($('html').height());
+            window.parent.postMessage(iframe_height, 'https://bootsnipp.com');
+        });
+    </script>
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/vendor.css">  
+   <link rel="stylesheet" href="css/main.css">  
+
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+   <style>
+        .product_view .modal-dialog{max-width: 800px; width: 100%;}
+        .pre-cost{text-decoration: line-through; color: #a5a5a5;}
+        .space-ten{padding: 10px 0;}
+        </style>
+
+   <!-- script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+	<script src="js/pace.min.js"></script>
+    <!-- Start of Async Drift Code -->
+<script>
+    !function () {
+        var t;
+        if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0,
+  t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
+  t.factory = function (e) {
+      return function () {
+          var n;
+          return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+      };
+  }, t.methods.forEach(function (e) {
+      t[e] = t.factory(e);
+  }), t.load = function (t) {
+      var e, n, o, i;
+      e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"),
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js",
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+    } ();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('u6evxctr7257');
+</script>
+<!-- End of Async Drift Code -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118346170-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-118346170-1');
+</script>
+
+<!-- Google Tag Manager -->
+<script>    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({ 'gtm.start':
+new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WCM47TJ');</script>
+<!-- End Google Tag Manager -->
+
+   <!-- favicons
+	================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" href="https://static1.squarespace.com/static/5300d507e4b0fa8137bdc65d/t/530bcccae4b0ef6b47235ff9/favicon.ico"/>>
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+
+
+<body id="top">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCM47TJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<!-- header 
+   ================================================== -->
+   <header> 
+
+   	<div class="header-logo">
+	      <a href="index.html">TesOnline | Fashion, Beauty, Culture.</a>
+	   </div> 
+
+		<a id="header-menu-trigger" href="#0">
+		 	<span class="header-menu-text">Menu</span>
+		  	<span class="header-menu-icon"></span>
+		</a> 
+
+		<nav id="menu-nav-wrap">
+
+			<a href="#0" class="close-button" title="close"><span>Close</span></a>	
+
+	   	<h3>TesOnline.</h3>  
+
+			<ul class="nav-list">
+				<li class="current"><a class="smoothscroll" href="#home" title="">Home</a></li>
+				<li><a class="smoothscroll" href="#about" title="">About</a></li>
+				<li><a class="smoothscroll" href="#skills" title="">Skills</a></li>
+				<li><a class="smoothscroll" href="#credentials" title="">Experience</a></li>
+				<li><a class="smoothscroll" href="#portfolio" title="">Works</a></li>
+				<li><a class="smoothscroll" href="#stats" title="">Stats</a></li>				
+				<li><a class="smoothscroll" href="#contact" title="">Contact</a></li>						
+			</ul>	
+
+			<ul class="header-social-list">
+	         <li>
+	         	<a href="#"><i class="fa fa-facebook-square"></i></a>
+	         </li>
+	         <li>
+	         	<a href="#"><i class="fa fa-twitter"></i></a>
+	         </li>
+            <li>
+            	<a href="#"><i class="fa fa-behance"></i></a>
+            </li>
+	         <li>
+	         	<a href="#"><i class="fa fa-dribbble"></i></a>
+	         </li>
+	         <li>
+	         	<a href="#"><i class="fa fa-instagram"></i></a>
+	         </li>
+	      </ul>		
+
+		</nav>  <!-- end #menu-nav-wrap -->
+
+	</header> <!-- end header -->  
+
+
+   <!-- home
+   ================================================== -->
+  <div class="container">
+<div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+    </ol>
+    <!-- Carousel items -->
+    <div class="carousel-inner carousel-zoom">
+        <div class="active item"><img class="img-responsive" src="https://images.unsplash.com/photo-1419064642531-e575728395f2?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1200">
+          <div class="carousel-caption">
+            <h2>Title</h2>
+            <p>Description</p>
+          </div>
+        </div>
+        <div class="item"><img class="img-responsive" src="https://images.unsplash.com/photo-1445280471656-618bf9abcfe0?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1200">
+          <div class="carousel-caption">
+            <h2>Title</h2>
+            <p>Description</p>
+          </div>
+        </div>
+        <div class="item"><img class="img-responsive" src="https://images.unsplash.com/photo-1445462657202-a0893228a1e1?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1200">
+          <div class="carousel-caption">
+            <h2>Title</h2>
+            <p>Description</p>
+          </div>
+        </div>
+       </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#carousel" data-slide="prev">‹</a>
+    <a class="carousel-control right" href="#carousel" data-slide="next">›</a>
+</div>
+</div>
+
+		<a href="#about" class="scroll-icon smoothscroll">		
+		   <span class="icon-DownArrow"></span>
+		</a>	
+   
+   </section> <!-- end home -->
+
+
+   <!-- about
+   ================================================== -->
+>
+<div class="case-study-gallery">
+  <h1 class="title">GENERAL CONTRACTING</h1>
+  <p>These products are brand new and in good condition. Quick DHL Tracked Deliveries to ANY LOCATION!</p>
+<div class="case-study study1">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">BLH Flyer 2016</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+  
+<div class="case-study study2">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">BS</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+  
+<div class="case-study study3">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">BSC3</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+  
+<div class="case-study study4">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">Calendar</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+  
+<div class="case-study study5">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">CC BA</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+  
+<div class="case-study study6">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">Developing Hexxis</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+
+<div class="case-study study7">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">Developing Hexxis</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+
+<div class="case-study study8">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">Developing Hexxis</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+
+<div class="case-study study9">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">Developing Hexxis</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+
+<div class="case-study study10">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">Developing Hexxis</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+
+<div class="case-study study11">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">Developing Hexxis</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+
+<div class="case-study study12">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">Developing Hexxis</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+
+<div class="case-study study13">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">Developing Hexxis</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+
+<div class="case-study study14">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">Developing Hexxis</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+
+<div class="case-study study15">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">Developing Hexxis</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+<div class="case-study study16">
+	<figure>
+		<img class="case-study__img" src="https://imgur.com/A330Wff" alt="" />
+	</figure>
+  <div class="case-study__overlay">
+  	<h2 class="case-study__title">Developing Hexxis</h2>
+    <a class="case-study__link" href="#">View Case Study</a>
+  </div>
+</div>
+</div>
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</body></html>
+
+
+	<!-- footer
+   ================================================== -->
+	<footer>
+     	<div class="row">
+
+     		<div class="col-twelve tab-full social">
+     			<ul class="footer-social">        
+			      <li><a href="#">Facebook</a></li>
+			      <li><a href="#">Twitter</a></li>
+			      <li><a href="#">Behance</a></li>
+			      <li><a href="#">Dribble</a></li>
+			      <li><a href="#">Instagram</a></li>
+			   </ul> 	      		
+	      </div>
+
+      	<div class="col-twelve tab-full">
+	      	<div class="copyright">
+		        	<span>© Copyright TesOnline 2018.</span> 		        	         	
+		      </div>		                  
+	      </div>      	
+
+      </div> <!-- end row -->
+
+      <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-UpArrow"></i></a>
+		</div>		
+   </footer>
+
+   <div id="preloader"> 
+    	<div id="loader"></div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+   <script src="js/jquery-2.1.3.min.js"></script>
+   <script src="js/plugins.js"></script>
+   <script src="js/main.js"></script>
+
+   <script async>       (function (s, u, m, o, j, v) { j = u.createElement(m); v = u.getElementsByTagName(m)[0]; j.async = 1; j.src = o; j.dataset.sumoSiteId = '7964999fa3f41dcc60855c070f27885891dece422b3648b842e60a15e39d8177'; v.parentNode.insertBefore(j, v) })(window, document, 'script', '//load.sumo.com/');</script>
+
+</body>
+
+</html>
